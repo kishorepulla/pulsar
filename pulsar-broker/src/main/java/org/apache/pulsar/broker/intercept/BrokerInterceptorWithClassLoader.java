@@ -96,63 +96,6 @@ public class BrokerInterceptorWithClassLoader implements BrokerInterceptor {
     }
 
     @Override
-    public void txnOpened(long tcId, String txnID) {
-        this.interceptor.txnOpened(tcId, txnID);
-    }
-
-    @Override
-    public void txnEnded(String txnID, long txnAction) {
-        this.interceptor.txnEnded(txnID, txnAction);
-    }
-
-    @Override
-    public void txnOpened(long tcId, String txnID) {
-        this.interceptor.txnOpened(tcId, txnID);
-    }
-
-    @Override
-    public void txnEnded(String txnID, long txnAction) {
-        this.interceptor.txnEnded(txnID, txnAction);
-    }
-
-    @Override
-    public void onConnectionCreated(ServerCnx cnx) {
-        this.interceptor.onConnectionCreated(cnx);
-    }
-
-    @Override
-    public void producerCreated(ServerCnx cnx, Producer producer,
-                                Map<String, String> metadata){
-        this.interceptor.producerCreated(cnx, producer, metadata);
-    }
-
-    @Override
-    public void consumerCreated(ServerCnx cnx,
-                                Consumer consumer,
-                                Map<String, String> metadata) {
-        this.interceptor.consumerCreated(
-                cnx, consumer, metadata);
-    }
-
-    @Override
-    public void messageProduced(ServerCnx cnx, Producer producer, long startTimeNs, long ledgerId,
-                                long entryId, Topic.PublishContext publishContext) {
-        this.interceptor.messageProduced(cnx, producer, startTimeNs, ledgerId, entryId, publishContext);
-    }
-
-    @Override
-    public  void messageDispatched(ServerCnx cnx, Consumer consumer, long ledgerId,
-                                   long entryId, ByteBuf headersAndPayload) {
-        this.interceptor.messageDispatched(cnx, consumer, ledgerId, entryId, headersAndPayload);
-    }
-
-    @Override
-    public void messageAcked(ServerCnx cnx, Consumer consumer,
-                             CommandAck ackCmd) {
-        this.interceptor.messageAcked(cnx, consumer, ackCmd);
-    }
-
-    @Override
     public void onConnectionCreated(ServerCnx cnx) {
         this.interceptor.onConnectionCreated(cnx);
     }
